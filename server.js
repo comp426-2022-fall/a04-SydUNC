@@ -1,4 +1,4 @@
-import { roll } from "../a04-SydUNC/lib/a03-SydUNC/lib/roll.js"
+import { roll } from "../a04-SydUNC/lib/roll.js"
 
 import * as http from 'http';
 
@@ -19,6 +19,7 @@ var rolls = 1;
 if (argv[0] != "") {
 	var cleaned = argv[0].match(/\d/g);
 	cleaned = cleaned.join("");
+	parseInt(cleaned);
 	port = cleaned;
 }
 
