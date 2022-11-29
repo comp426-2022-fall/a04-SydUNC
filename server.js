@@ -31,17 +31,23 @@ app.get('/app/roll/', (req, res) => {
 })
 app.get('/app/roll/:sides', (req, res) => {
 	side = req.params['sides']
+	parseInt(side)
 	res.send(console.log(JSON.stringify(roll(side, die, rolls))));
 })
 app.get('/app/roll/:sides/:dice', (req, res) => {
 	side = req.params['sides']
 	die = req.params['dice']
+	parseInt(side)
+	parseInt(die)
 	res.send(console.log(JSON.stringify(roll(side, die, rolls))));
 })
 app.get('/app/roll/:sides/:dice/:rolls', (req, res) => {
 	side = req.params['sides']
 	die = req.params['dice']
 	rolls = req.params['rolls']
+	parseInt(side)
+	parseInt(die)
+	parseInt(rolls)
 	res.send(console.log(JSON.stringify(roll(side, die, rolls))));
 })
 app.use(express.urlencoded({extended:true}));
@@ -49,6 +55,9 @@ app.post('/app/roll/', (req, res) => {
 	rolls = req.body.rolls;
 	die = req.body.dice;
 	side = req.body.sides;
+	parseInt(rolls)
+	parseInt(die)
+	parseInt(side)
 	res.send(console.log(JSON.stringify(roll(side, die, rolls))));
 })
 app.use((req, res, next) => {
